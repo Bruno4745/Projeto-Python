@@ -8,21 +8,32 @@
 </head>
 <body>
     <div class="bg-light" style="height: 100vh">
-        <div class="container p-3">
-            <h1>Calculadora</h1>
-            <hr/>
-            <form method="POST">
-                <input type="number" step="any" placeholder="Digite o primeiro numero" name="num1" class="form-control my-3">
-                <input type="number" step="any" placeholder="Digite o segundo numero" name="num2" class="form-control my-3">
-                
-                <input type="radio" name="opc" id="somar"value="somar" checked> <label for="somar">Somar</label> <br>
-                <input type="radio" name="opc" id="subtrair" value="subtrair"> <label for="subtrair">Subtrair</label> <br>
-                <input type="radio" name="opc" id="multiplicar" value="multiplicar"> <label for="multiplicar">Multiplicar</label> <br>
-                <input type="radio" name="opc" id="divisao" value="divisao"> <label for="divisao">Dividir</label> <br>
-                
-                <button class="btn btn-primary my-3">Calcular</button>
-                <button class="btn btn-danger my-3" type="reset">Apagar</button>
-            </form>
+        <div class="container row p-3 mx-auto">
+            <div class="col-6 border border-2">
+                <h1>Calculadora</h1>
+                <hr/>
+                <form method="POST">
+                    <input type="number" step="any" placeholder="Digite o primeiro numero" name="num1" class="form-control my-3">
+                    <input type="number" step="any" placeholder="Digite o segundo numero" name="num2" class="form-control my-3">
+                    
+                    <input type="radio" name="opc" id="somar"value="somar" checked> <label for="somar">Somar</label> <br>
+                    <input type="radio" name="opc" id="subtrair" value="subtrair"> <label for="subtrair">Subtrair</label> <br>
+                    <input type="radio" name="opc" id="multiplicar" value="multiplicar"> <label for="multiplicar">Multiplicar</label> <br>
+                    <input type="radio" name="opc" id="divisao" value="divisao"> <label for="divisao">Dividir</label> <br>
+                    
+                    <button class="btn btn-primary my-3">Calcular</button>
+                    <button class="btn btn-danger my-3" type="reset">Apagar</button>
+                </form>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5 border border-2">
+                <h1>Resultado</h1>
+                <hr/>
+                    <p>Primeiro numero digitado: <strong>{{numero1}}</strong></p>
+                    <p>Segundo numero digitado: <strong>{{numero2}}</strong></p>
+                    <p>Calculo: <strong>{{numero1}} {{operacao}} {{numero2}}</strong></p>
+                    <p>Resultado: <strong>{{resultado}}</strong></p>
+            </div>
         </div>
     </div>
 </body>

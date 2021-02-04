@@ -15,27 +15,19 @@ def home():
             
             if (request.form["opc"] == "somar"):
                 soma = float(num1) + float(num2)
-                return {
-                    f"Resultado de {num1}+{num2}": f"{soma:.2f}"
-                }
+                return render_template("index.html", resultado=soma, numero1=num1, numero2=num2, operacao="+")
 
             elif (request.form["opc"] == "subtrair"):
                 subtracao = float(num1) - float(num2)
-                return {
-                    f"Resultado de {num1}-{num2}": f"{subtracao:.2f}"
-                }
+                return render_template("index.html", resultado=subtracao, numero1=num1, numero2=num2, operacao="-")
             
             elif (request.form["opc"] == "multiplicar"):
                 multiplicacao = float(num1) * float(num2)
-                return {
-                    f"Resultado de {num1}*{num2}": f"{multiplicacao:.2f}"
-                }
+                return render_template("index.html", resultado=multiplicacao, numero1=num1, numero2=num2, operacao="*")
 
             else:
                 divisao = float(num1) / float(num2)
-                return {
-                    f"Resultado de {num1}/{num2}": f"{divisao:.2f}"
-                }
+                return render_template("index.html", resultado=divisao, numero1=num1, numero2=num2, operacao="/")
         else:
             return render_template("mensagem.html")
 
